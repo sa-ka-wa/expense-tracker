@@ -32,3 +32,4 @@ const tasks = [
     date: "2023-10-04",
   },
 ];
+export default tasks;

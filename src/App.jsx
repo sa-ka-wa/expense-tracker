@@ -1,12 +1,14 @@
 import React from "react";
-import ExpenseList from "../src/output.jsx";
-import Input from "../src/input.jsx";
-import Tasks from "../constants/tasks.js";
+import ExpenseList from "./output.jsx";
+import Input from "./input.jsx";
+import tasks from "./constants/tasks.js";
 function App() {
-  <>
-    <ExpenseList />
-    <Input />
-  </>;
+  return (
+    <>
+      <Input />
+      <ExpenseList tasks={tasks} />
+    </>
+  );
 }
 
 export default App;
