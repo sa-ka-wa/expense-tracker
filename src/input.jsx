@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Input() {
-  function Input({ onAddExpense }) {
+function Input({ onAddExpense }) {
   const [expense, setExpense] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
@@ -27,18 +26,44 @@ function Input() {
     setAmount("");
     setDate("");
   };
+
   return (
-    <>
+    <div>
       <h1>Add Expense</h1>
-      <div>
-        <input type="text" placeholder="Expense" />
-        <input type="text" placeholder="Description" />
-        <input type="text" placeholder="Category" />
-        <input type="number" placeholder="Amount" />
-        <input type="date" placeholder="Date" />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Expense"
+          value={expense}
+          onChange={(e) => setExpense(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
         <button type="submit">Add Expense</button>
-      </div>
-    </>
+      </form>
+    </div>
   );
 }
+
 export default Input;
