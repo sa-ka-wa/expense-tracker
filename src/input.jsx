@@ -30,7 +30,7 @@ function Input({ onAddExpense }) {
   return (
     <div>
       <h1>Add Expense</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="input-form" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Expense"
